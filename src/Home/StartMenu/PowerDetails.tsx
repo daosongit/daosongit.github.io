@@ -1,5 +1,5 @@
 import { Fade, List, Stack } from '@mui/material';
-import StartButton from '../../UI/StartButton';
+import StartButton from '../UI/StartButton';
 import { BsPower as IcoPower, BsMoon as IcoSleep } from 'react-icons/bs';
 import { RxReload as IcoReload } from 'react-icons/rx';
 

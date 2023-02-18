@@ -1,11 +1,10 @@
 import { Box, ClickAwayListener, Popper, Slide } from '@mui/material';
 import { useState } from 'react';
 import { GrWindows as IcoStart } from 'react-icons/gr';
-import TaskbarButton from '../UI/TaskbarButton';
-import StartMenu from './StartMenu/StartMenu';
-import { ChromeSVG, SnakeSVG } from './SvgIcons';
+import TaskbarButton from '../Home/UI/TaskbarButton';
+import StartMenu from '../Home/StartMenu/StartMenu';
 
-export default function Navigation() {
+export default function Taskbar() {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     if (!anchorEl) setAnchorEl(event.currentTarget);

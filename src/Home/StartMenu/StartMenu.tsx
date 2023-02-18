@@ -1,7 +1,7 @@
 import { Box } from '@mui/material';
 import { memo, useState } from 'react';
 import PinnedApps from './PinnedApps';
-import PowerPopup from './PowerPopup';
+import PowerPopup from './PowerDetails';
 import Sidebar from './Sidebar';
 
 function StartMenu() {

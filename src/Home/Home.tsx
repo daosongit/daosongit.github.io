@@ -1,7 +1,6 @@
 import { Box } from '@mui/material';
-import AppButton from '../UI/AppButton';
-import Taskbar from './TaskBar';
-import { ChromeSVG, SnakeSVG, TrashSVG } from './SvgIcons';
+import AppButton from './UI/AppButton';
+import { ChromeSVG, SnakeSVG, TrashSVG } from './AppIcons';
 
 export default function Home() {
   return (
@@ -9,11 +8,11 @@ export default function Home() {
       component="main"
       sx={{
         width: '100vw',
-        height: '100vh',
+        height: 'calc(100vh - 45px)',
       }}>
       <Box
         sx={{
-          height: 'calc(100% - 45px)',
+          height: '100%',
           backgroundImage: {
             xs: 'url(w.jpg)',
             sm: 'url(w-hd.jpg)',
@@ -46,7 +45,6 @@ export default function Home() {
           </AppButton>
         </Box>
       </Box>
-      <Taskbar />
     </Box>
   );
 }

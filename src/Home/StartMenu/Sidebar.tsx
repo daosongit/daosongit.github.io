@@ -1,5 +1,5 @@
 import { List } from '@mui/material';
-import StartButton from '../../UI/StartButton';
+import StartButton from '../UI/StartButton';
 import { CiSettings as IcoSetting } from 'react-icons/ci';
 import { BsPower as IcoPower } from 'react-icons/bs';
 

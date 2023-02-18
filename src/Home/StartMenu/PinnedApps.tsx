@@ -1,7 +1,7 @@
 import { List } from '@mui/material';
 import { memo } from 'react';
-import AppButton from '../../UI/AppButton';
-import { ChromeSVG, SnakeSVG } from '../SvgIcons';
+import AppButton from '../UI/AppButton';
+import { ChromeSVG, SnakeSVG } from '../AppIcons';
 
 function PinnedApps() {
   console.log('PinnedApps');
@@ -15,6 +15,7 @@ function PinnedApps() {
       sx={{ display: 'flex', columnGap: '5px', p: '20px', justifyContent: 'space-around' }}>
       {pinnedAppsList.map((el) => (
         <AppButton
+          key={el.title}
           title={el.title}
           sx={{
             backgroundColor: '#6e6e6e',

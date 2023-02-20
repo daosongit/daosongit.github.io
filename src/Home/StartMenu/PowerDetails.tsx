@@ -1,4 +1,4 @@
-import { Fade, List, Stack } from '@mui/material';
+import { Fade, Stack } from '@mui/material';
 import StartButton from '../UI/StartButton';
 import { BsPower as IcoPower, BsMoon as IcoSleep } from 'react-icons/bs';
 import { RxReload as IcoReload } from 'react-icons/rx';
@@ -35,5 +35,4 @@ function PowerPopup({ power }: { power: boolean }) {
   );
 }
 
-// export default memo(PowerPopup);
 export default PowerPopup;

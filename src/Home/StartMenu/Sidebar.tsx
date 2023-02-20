@@ -24,5 +24,4 @@ function Sidebar({ onClick }: { onClick: () => void }) {
   );
 }
 
-// export default React.memo(Sidebar);
 export default Sidebar;

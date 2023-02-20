@@ -14,11 +14,11 @@ export default function Home() {
         sx={{
           height: '100%',
           backgroundImage: {
-            xs: 'url(w.jpg)',
-            sm: 'url(w-hd.jpg)',
-            md: 'url(w-hd.jpg)',
-            lg: 'url(w-fhd.jpg)',
-            xl: 'url(w-2k.jpg)',
+            xs: 'url(images/w.jpg)',
+            sm: 'url(images/w-hd.jpg)',
+            md: 'url(images/w-hd.jpg)',
+            lg: 'url(images/w-fhd.jpg)',
+            xl: 'url(images/w-2k.jpg)',
           },
           backgroundSize: 'cover',
           backgroundPosition: 'right',

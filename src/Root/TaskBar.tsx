@@ -4,6 +4,8 @@ import { GrWindows as IcoStart } from 'react-icons/gr';
 import TaskbarButton from '../Home/UI/TaskbarButton';
 import StartMenu from '../Home/StartMenu/StartMenu';
 
+export const TASKBAR_HEIGHT = '45px';
+
 export default function Taskbar() {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -17,10 +19,12 @@ export default function Taskbar() {
     <Box
       component="footer"
       sx={{
+        position: 'sticky',
+        bottom: 0,
         display: 'flex',
         alignItems: 'center',
         width: '100%',
-        height: '45px',
+        height: TASKBAR_HEIGHT,
         background:
           'linear-gradient(0deg, rgba(39,30,30,1) 0%, rgba(43,42,31,1) 49%, rgba(45,43,48,1) 100%)',
       }}>

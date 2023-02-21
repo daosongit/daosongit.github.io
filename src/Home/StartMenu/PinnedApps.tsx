@@ -6,8 +6,8 @@ import { ChromeSVG, SnakeSVG } from '../AppIcons';
 function PinnedApps() {
   console.log('PinnedApps');
   const pinnedAppsList = [
-    { title: 'Portfolio', icon: <ChromeSVG /> },
-    { title: 'Snake', icon: <SnakeSVG /> },
+    { title: 'Portfolio', icon: <ChromeSVG />, link: '/portfolio' },
+    { title: 'Snake', icon: <SnakeSVG />, link: '/snake' },
   ];
   return (
     <List
@@ -17,6 +17,7 @@ function PinnedApps() {
         <AppButton
           key={el.title}
           title={el.title}
+          link={el.link}
           sx={{
             backgroundColor: '#6e6e6e',
             '&:hover': {

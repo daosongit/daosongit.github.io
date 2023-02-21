@@ -1,17 +1,7 @@
-import { CssBaseline } from '@mui/material';
-import { createHashRouter, Outlet } from 'react-router-dom';
+import { createHashRouter } from 'react-router-dom';
 import Home from '../Home/Home';
-import Taskbar from './TaskBar';
-
-const Root = () => {
-  return (
-    <>
-      <CssBaseline />
-      <Outlet />
-      <Taskbar />
-    </>
-  );
-};
+import Portfolio from '../Portfolio/Portfolio';
+import Root from './Root';
 
 const router = createHashRouter([
   {
@@ -21,6 +11,10 @@ const router = createHashRouter([
       {
         path: '/',
         element: <Home />,
+      },
+      {
+        path: '/portfolio',
+        element: <Portfolio />,
       },
     ],
   },

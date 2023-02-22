@@ -50,6 +50,7 @@ export default function Stack() {
         <Tabs value={value} onChange={handleChange}>
           {stackList.map((el) => (
             <Tab
+              key={el.label}
               icon={el.icon}
               iconPosition="start"
               label={el.label}

@@ -1,8 +1,8 @@
 import { Box, Container, Divider, Typography } from '@mui/material';
-import AboutMe from './About/AboutMe';
-import Header from './About/Header';
-import GitInfo from './About/GitInfo';
-import Stack from './Stack/Stack';
+import AboutMe from './Intro/AboutMe';
+import Header from './Header';
+import GitInfo from './Intro/GitInfo';
+import Stack from './TechStack/TechStack';
 import { TASKBAR_HEIGHT } from '../Root/TaskBar';
 import FirstSteps from './FirstSteps/FirstSteps';
 import { AiFillGithub as IcoGitHub } from 'react-icons/ai';

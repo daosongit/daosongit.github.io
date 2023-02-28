@@ -16,12 +16,14 @@ export default function AboutMe() {
           backgroundRepeat: 'no-repeat',
           border: '1px solid grey',
           display: 'flex',
+          mb: '20px',
         }}
       />
       <Typography sx={{ maxWidth: '300px' }}>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates ipsam atque aut
-        architecto, nemo culpa suscipit numquam, veniam, tempora minus sequi quis quia. Facilis ipsa
-        officiis quam, minus molestiae sequi.
+        Hi, I'm Ivan Kulai - React developer. I'm a self-motivated person who is always eager to
+        learn new things and take on new challenges. With my passion for programming, I am
+        constantly striving to improve my skills and develop innovative solutions. I am adaptable,
+        quick to learn and always looking for opportunities to grow as a developer.
       </Typography>
     </Box>
   );

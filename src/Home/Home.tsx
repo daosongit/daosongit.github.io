@@ -1,9 +1,15 @@
-import { Box } from '@mui/material';
-import AppButton from './UI/AppButton';
+import { Box, Typography } from '@mui/material';
 import { ChromeSVG, SnakeSVG, TrashSVG } from './AppIcons';
 import { TASKBAR_HEIGHT } from '../Root/TaskBar';
+import Trash from './RecycleBin/RecycleBin';
+import { useState } from 'react';
+import AppButtonLink, { AppButton } from './UI/AppButton';
 
 export default function Home() {
+  const [isRecycleBin, setRecycleBin] = useState(false);
+  const closeRecycleBin = () => {
+    setRecycleBin(false);
+  };
   return (
     <Box
       component="main"
@@ -25,6 +31,7 @@ export default function Home() {
           backgroundPosition: 'right',
           color: 'white',
           p: '20px',
+          position: 'relative',
         }}>
         <Box
           component="section"
@@ -35,19 +42,22 @@ export default function Home() {
             width: 'fit-content',
             rowGap: '10px',
           }}>
-          <AppButton title="Portfolio" link="portfolio">
+          <AppButtonLink title="Portfolio" link="portfolio">
             <ChromeSVG />
-          </AppButton>
-          <AppButton title="Snake" link="snake">
+          </AppButtonLink>
+          <AppButtonLink title="Snake" link="snake">
             <SnakeSVG />
-          </AppButton>
+          </AppButtonLink>
           <AppButton
-            title="Trash"
-            link="/trash"
-            sx={{ position: 'absolute', right: '20px', bottom: '65px' }}>
+            sx={{ position: 'absolute', right: '20px', bottom: '20px' }}
+            onClick={() => setRecycleBin(!isRecycleBin)}>
             <TrashSVG />
+            <Typography component="span" noWrap>
+              Trash
+            </Typography>
           </AppButton>
         </Box>
+        <Trash isOpen={isRecycleBin} close={closeRecycleBin} />
       </Box>
     </Box>
   );

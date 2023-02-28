@@ -45,7 +45,7 @@ export default function GitInfo() {
   };
 
   return (
-    <>
+    <div>
       <Typography component="span" fontSize="1.2rem">
         Pinned
       </Typography>
@@ -101,6 +101,6 @@ export default function GitInfo() {
           />
         ))}
       </List>
-    </>
+    </div>
   );
 }

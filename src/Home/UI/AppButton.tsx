@@ -1,31 +1,32 @@
-import { Button, ButtonProps, Typography } from '@mui/material';
+import { Button, styled, SxProps, Typography } from '@mui/material';
 import { NavLink } from 'react-router-dom';
 
-interface AppButtonProps extends ButtonProps {
+export const AppButton = styled(Button)({
+  width: '90px',
+  textTransform: 'none',
+  display: 'block',
+  color: '#e2e0e0',
+  '& a': {
+    color: 'inherit',
+    textDecoration: 'none',
+  },
+});
+
+interface AppButtonLinkProps {
   title: string;
   link: string;
+  sx?: SxProps;
+  children?: React.ReactNode;
 }
-export default function AppButton({ link, title, onClick, sx, children }: AppButtonProps) {
+export default function AppButtonLink({ link, title, children, sx }: AppButtonLinkProps) {
   return (
-    <Button
-      onClick={onClick}
-      sx={{
-        ...sx,
-        width: '90px',
-        textTransform: 'none',
-        display: 'block',
-        color: '#e2e0e0',
-        '& a': {
-          color: 'inherit',
-          textDecoration: 'none',
-        },
-      }}>
+    <AppButton sx={{ ...sx }}>
       <NavLink to={link}>
         {children}
-        <Typography component="span" noWrap>
+        <Typography component="span" variant="body1" noWrap>
           {title}
         </Typography>
       </NavLink>
-    </Button>
+    </AppButton>
   );
 }

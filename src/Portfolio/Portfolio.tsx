@@ -12,7 +12,6 @@ export default function Portfolio() {
       maxWidth="lg"
       sx={{ py: '20px', color: '#e2e0e0', minHeight: `calc(100vh - ${TASKBAR_HEIGHT})` }}>
       <Header />
-      {/* <Divider sx={{ mb: '30px' }} /> */}
       <Box component="section" sx={{ display: 'flex', justifyContent: 'space-between' }}>
         <AboutMe />
         <GitInfo />

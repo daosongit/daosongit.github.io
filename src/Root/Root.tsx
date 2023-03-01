@@ -1,6 +1,6 @@
 import { createTheme, CssBaseline, ThemeProvider } from '@mui/material';
 import { Outlet } from 'react-router-dom';
-import Taskbar from './TaskBar';
+import Taskbar from './TaskBar/TaskBar';
 
 const theme = createTheme({
   palette: {

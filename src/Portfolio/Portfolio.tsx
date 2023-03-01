@@ -3,7 +3,7 @@ import AboutMe from './Intro/AboutMe';
 import Header from './Header';
 import GitInfo from './Intro/GitInfo';
 import Stack from './TechStack/TechStack';
-import { TASKBAR_HEIGHT } from '../Root/TaskBar';
+import { TASKBAR_HEIGHT } from '../Root/TaskBar/TaskBar';
 import FirstSteps from './FirstSteps/FirstSteps';
 
 export default function Portfolio() {

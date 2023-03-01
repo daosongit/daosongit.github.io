@@ -1,7 +1,7 @@
 import { List } from '@mui/material';
 import { memo } from 'react';
 import AppButtonLink from '../UI/AppButton';
-import { ChromeSVG, SnakeSVG } from '../AppIcons';
+import { ChromeSVG, SnakeSVG } from '../Applications/AppIcons';
 
 function PinnedApps() {
   console.log('PinnedApps');

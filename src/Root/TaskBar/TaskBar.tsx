@@ -1,20 +1,29 @@
-import { Box, ClickAwayListener, Popper, Slide } from '@mui/material';
+import { Box, ClickAwayListener, Popper, Slide, Link, Button } from '@mui/material';
 import { useState } from 'react';
 import { GrWindows as IcoStart } from 'react-icons/gr';
-import TaskbarButton from '../Home/UI/TaskbarButton';
-import StartMenu from '../Home/StartMenu/StartMenu';
+import { TaskbarBtnStyles } from './button-styles';
+import StartMenu from '../../Home/StartMenu/StartMenu';
+import { useAppSelector } from '../../redux/store';
+import appList from '../../Home/Applications/AppList';
+import { NavLink } from 'react-router-dom';
+import ManagedTooltip from '../../Home/UI/ManagedTooltip';
 
 export const TASKBAR_HEIGHT = '45px';
 
 export default function Taskbar() {
+  const tabs = useAppSelector((state) => state);
+
+  // StartMenu logic
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
-  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+  const clickStartMenuBtn = (event: React.MouseEvent<HTMLButtonElement>) => {
     if (!anchorEl) setAnchorEl(event.currentTarget);
     else setAnchorEl(null);
   };
-  const handleClose = () => {
+  const closeStartMenu = () => {
     setAnchorEl(null);
   };
+  // end StartMenu logic
+
   return (
     <Box
       component="footer"
@@ -28,11 +37,17 @@ export default function Taskbar() {
         background:
           'linear-gradient(0deg, rgba(39,30,30,1) 0%, rgba(43,42,31,1) 49%, rgba(45,43,48,1) 100%)',
       }}>
-      <ClickAwayListener onClickAway={handleClose}>
+      <ClickAwayListener onClickAway={closeStartMenu}>
         <Box sx={{ height: '100%' }}>
-          <TaskbarButton active={Boolean(anchorEl)} title="Start" onClick={handleClick}>
-            <IcoStart />
-          </TaskbarButton>
+          <ManagedTooltip title="Start">
+            <Button
+              sx={{ ...TaskbarBtnStyles }}
+              onClick={clickStartMenuBtn}
+              className={`${Boolean(anchorEl) ? 'active' : ''}`}>
+              <IcoStart />
+            </Button>
+          </ManagedTooltip>
+
           <Popper open={Boolean(anchorEl)} anchorEl={anchorEl} transition>
             {({ TransitionProps }) => (
               <Slide {...TransitionProps} direction="right">
@@ -51,6 +66,13 @@ export default function Taskbar() {
           </Popper>
         </Box>
       </ClickAwayListener>
+      {Array.from(tabs).map((tab) => (
+        <ManagedTooltip key={tab} title={tab}>
+          <Link component={NavLink} to={appList[tab].link} sx={{ ...TaskbarBtnStyles }}>
+            {appList[tab].icon}
+          </Link>
+        </ManagedTooltip>
+      ))}
     </Box>
   );
 }

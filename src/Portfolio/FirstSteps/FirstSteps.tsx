@@ -51,6 +51,7 @@ export default function FirstSteps() {
 
   return (
     <Stack>
+      <Typography sx={{ color: 'yellow' }}>------TODO REMINDER------</Typography>
       <Button
         onClick={() => setJs(!js)}
         sx={{ display: 'flex', justifyContent: 'flex-start', columnGap: '10px' }}>
@@ -63,7 +64,6 @@ export default function FirstSteps() {
         code={JS_CODE_EXAMPLE}
         link="https://github.com/daosongit/modapogoda/blob/main/js/cart.js"
       />
-
       <Button
         onClick={() => setReact(!react)}
         sx={{ display: 'flex', justifyContent: 'flex-start', columnGap: '10px' }}>

@@ -5,7 +5,7 @@ type StateType = string[];
 
 const tabSlice = createSlice({
   name: 'tabSlice',
-  initialState: ['Portfolio'] as StateType,
+  initialState: [] as StateType,
   reducers: {
     addTab: (state: StateType, action: PayloadAction<string>) => {
       if (!state.includes(action.payload)) {
@@ -14,7 +14,7 @@ const tabSlice = createSlice({
     },
     removeTab: (state: StateType, action: PayloadAction<string>) => {
       const index = state.indexOf(action.payload);
-      state.splice(1, index);
+      state.splice(index, 1);
     },
   },
 });

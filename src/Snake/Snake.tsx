@@ -9,6 +9,7 @@ import { useEffect, useRef, useState } from 'react';
 import Board from './Components/Board';
 import Topbar from './Components/Topbar';
 import GameMenu from './Components/GameMenu';
+import TopNavigation, { TOPNAV_HEIGHT } from '../Components/TopNavigation';
 //modules
 import theme from './styles/theme';
 import checkBorderLine from './modules/checkBorderLine';
@@ -86,6 +87,7 @@ export default function Snake() {
 
   return (
     <ThemeProvider theme={theme}>
+      <TopNavigation />
       <Box
         sx={{
           display: 'flex',
@@ -93,7 +95,7 @@ export default function Snake() {
           alignItems: 'center',
           justifyContent: 'center',
           width: '100%',
-          height: `calc(100vh - ${TASKBAR_HEIGHT})`,
+          height: `calc(100vh - ${TASKBAR_HEIGHT} - ${TOPNAV_HEIGHT})`,
           background:
             'linear-gradient(186deg, rgba(35,48,48,1) 0%, rgba(41,40,40,1) 49%, #323328 100%)',
         }}>

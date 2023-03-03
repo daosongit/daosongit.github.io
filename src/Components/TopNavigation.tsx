@@ -6,6 +6,8 @@ import { useNavigate } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../redux/store';
 import { removeTab } from '../redux/tabSlice';
 
+export const TOPNAV_HEIGHT = '32px';
+
 type NavItemProps = {
   disabled?: boolean;
   title: string;
@@ -23,7 +25,7 @@ const NavItem = ({ children, title, onClick, disabled = false }: NavItemProps) =
   </Tooltip>
 );
 
-export default function Header() {
+export default function TopNavigation() {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
   const tabs = useAppSelector((state) => state);
@@ -31,12 +33,15 @@ export default function Header() {
     // todo
   };
   const closeTab = () => {
-    dispatch(removeTab('Portfolio'));
+    const href = window.location.href;
+    const path = href.slice(href.search('#') + 2);
+    const tab = path.charAt(0).toUpperCase() + path.slice(1);
+    dispatch(removeTab(tab));
     navigate('/');
   };
 
   return (
-    <Box component="header" sx={{ mb: '20px' }}>
+    <Box component="header" sx={{ height: TOPNAV_HEIGHT }}>
       <Box component="nav" sx={{ display: 'flex', columnGap: '10px', justifyContent: 'flex-end' }}>
         <NavItem disabled={tabs.length <= 1} title="Previous" onClick={previosTab}>
           <IcoBack size={20} />

@@ -10,12 +10,7 @@ interface BoardProps {
 export default function Board({ snake, food }: BoardProps) {
   const CellSize = useCellSize();
   return (
-    <Box
-      sx={{
-        border: '1px solid white',
-        borderRadius: '5px',
-        boxShadow: '0px 0px 83px -25px #666565',
-      }}>
+    <>
       {BOARD.map((row, idxR) => (
         <Box key={idxR} display="flex">
           {row.map((cell, idxC) => {
@@ -44,13 +39,12 @@ export default function Board({ snake, food }: BoardProps) {
                   display: 'flex',
                   width: CellSize,
                   height: CellSize,
-                  border: '1px solid white',
                 }}
               />
             );
           })}
         </Box>
       ))}
-    </Box>
+    </>
   );
 }

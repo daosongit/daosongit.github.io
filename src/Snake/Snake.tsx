@@ -15,7 +15,7 @@ import theme from './styles/theme';
 import checkBorderLine from './modules/checkBorderLine';
 import getRandomArr from './modules/getRandomArr';
 import getMoveDirection from './modules/getMoveDirection';
-import isSnakeСannibal from './modules/isSnakeCannibal';
+import isSnakeCannibal from './modules/isSnakeCannibal';
 import useKeyDownHandler from './hooks/useKeyDownHandler';
 
 export default function Snake() {
@@ -62,7 +62,7 @@ export default function Snake() {
 
       newSnake.push(head);
 
-      if (isSnakeСannibal(snake)) {
+      if (isSnakeCannibal(snake)) {
         setSnake([getRandomArr()]);
         setGameStarted(false);
         const storage = Number(localStorage.getItem('score'));

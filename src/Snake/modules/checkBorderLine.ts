@@ -1,4 +1,4 @@
-import { BOARD_SIZE } from '../constants';
+import { BOARD_SIZE } from './constants';
 
 export default function checkBorderLine(position: number) {
   switch (true) {

@@ -1,4 +1,4 @@
-import { MOVE_DIRECTION } from '../constants';
+import { MOVE_DIRECTION } from './constants';
 
 const moveDirection = (direction: string) => {
   let move = [] as number[];

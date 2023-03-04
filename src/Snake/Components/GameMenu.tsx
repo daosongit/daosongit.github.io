@@ -1,6 +1,6 @@
 import { Box, Button, ToggleButton, ToggleButtonGroup, Typography } from '@mui/material';
 import { useState } from 'react';
-import { BOARD_SIZE, SPEED } from '../constants';
+import { BOARD_SIZE, SPEED } from '../modules/constants';
 import useCellSize from '../hooks/useCellSize';
 
 interface GameMenuProps {

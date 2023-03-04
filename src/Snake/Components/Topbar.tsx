@@ -1,5 +1,5 @@
 import { Box, Button, Typography } from '@mui/material';
-import { BOARD_SIZE } from '../constants';
+import { BOARD_SIZE } from '../modules/constants';
 import useCellSize from '../hooks/useCellSize';
 
 interface TopbarProps {

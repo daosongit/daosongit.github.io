@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { MOVE_DIRECTION } from '../constants';
+import { MOVE_DIRECTION } from '../modules/constants';
 
 interface KeyDownHandlerProps {
   direction: string;

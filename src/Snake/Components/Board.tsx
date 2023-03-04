@@ -1,5 +1,5 @@
 import { Box } from '@mui/material';
-import { BOARD } from '../constants';
+import { BOARD } from '../modules/constants';
 import useCellSize from '../hooks/useCellSize';
 
 interface BoardProps {

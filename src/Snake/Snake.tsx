@@ -1,6 +1,6 @@
 // constants
 import { TASKBAR_HEIGHT } from '../Root/TaskBar/TaskBar';
-import { MOVE_DIRECTION, SPEED } from './constants';
+import { MOVE_DIRECTION, SPEED } from './modules/constants';
 //mui
 import { Box, ThemeProvider } from '@mui/material';
 // react

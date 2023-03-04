@@ -25,6 +25,9 @@ const theme = createTheme({
       },
     },
   },
+  palette: {
+    mode: 'dark',
+  },
 });
 
 theme.typography.h1 = theme.typography.caption = {

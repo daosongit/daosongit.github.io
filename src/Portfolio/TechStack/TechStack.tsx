@@ -14,10 +14,10 @@ function TabPanel(props: TabPanelProps) {
     <Box
       sx={{
         display: `${tabIdx === index ? 'flex' : 'none'}`,
-        width: '70%',
-        textAlign: 'start',
         mx: 'auto',
         justifyContent: 'center',
+        height: '420px',
+        overflowY: 'auto',
       }}>
       {children}
     </Box>
@@ -31,29 +31,40 @@ export default function Stack() {
   };
 
   return (
-    <Box component="section" sx={{ textAlign: 'center' }}>
-      <Typography component="h1" variant="h5">
+    <>
+      <Typography component="h1" variant="h5" sx={{ textAlign: 'center', mb: '20px' }}>
         Stack
       </Typography>
-      <Box
-        sx={{ display: 'flex', alignItems: 'center', columnGap: '5%', justifyContent: 'center' }}>
-        <Tabs value={tabIdx} onChange={handleChange}>
-          {stackList.map((el) => (
-            <Tab
-              key={el.label}
-              icon={el.icon}
-              iconPosition="start"
-              label={el.label}
-              sx={{ textTransform: 'none', py: 0, minHeight: '60px' }}
-            />
-          ))}
-        </Tabs>
+      <Box component="section" sx={{ display: 'flex', columnGap: '5%' }}>
+        <Box sx={{ display: 'flex', alignItems: 'flex-start' }}>
+          <Tabs
+            value={tabIdx}
+            onChange={handleChange}
+            orientation="vertical"
+            sx={{ display: 'flex' }}>
+            {stackList.map((el) => (
+              <Tab
+                key={el.label}
+                icon={el.icon}
+                iconPosition="start"
+                label={el.label}
+                sx={{
+                  display: 'flex',
+                  justifyContent: 'flex-start',
+                  textTransform: 'none',
+                  py: 0,
+                  minHeight: '60px',
+                }}
+              />
+            ))}
+          </Tabs>
+        </Box>
+        {stackList.map((el, idx) => (
+          <TabPanel key={el.label} tabIdx={tabIdx} index={idx} aria-label={el.aria}>
+            {el.text}
+          </TabPanel>
+        ))}
       </Box>
-      {stackList.map((el, idx) => (
-        <TabPanel key={el.label} tabIdx={tabIdx} index={idx} aria-label={el.aria}>
-          {el.text}
-        </TabPanel>
-      ))}
-    </Box>
+    </>
   );
 }

@@ -50,32 +50,37 @@ export default function FirstSteps() {
   const [react, setReact] = useState(false);
 
   return (
-    <Stack>
+    <>
       <Typography sx={{ color: 'yellow' }}>------TODO REMINDER------</Typography>
-      <Button
-        onClick={() => setJs(!js)}
-        sx={{ display: 'flex', justifyContent: 'flex-start', columnGap: '10px' }}>
-        <Typography>My first steps in JS</Typography>
-        {js ? <IcoArrowDown size={10} /> : <IcoArrowRight size={10} />}
-      </Button>
-      <CollapseNode
-        open={js}
-        language="js"
-        code={JS_CODE_EXAMPLE}
-        link="https://github.com/daosongit/modapogoda/blob/main/js/cart.js"
-      />
-      <Button
-        onClick={() => setReact(!react)}
-        sx={{ display: 'flex', justifyContent: 'flex-start', columnGap: '10px' }}>
-        <Typography>My first steps in React</Typography>
-        {react ? <IcoArrowDown size={10} /> : <IcoArrowRight size={10} />}
-      </Button>
-      <CollapseNode
-        open={react}
-        language="jsx"
-        code={REACT_CODE_EXAMPLE}
-        link="https://github.com/daosongit/modapogoda.react/blob/master/src/components/ProductCart/ProductCart.jsx"
-      />
-    </Stack>
+      <Typography component="h1" variant="h5" sx={{ textAlign: 'center', mb: '10px' }}>
+        First steps
+      </Typography>
+      <Stack>
+        <Button
+          onClick={() => setJs(!js)}
+          sx={{ display: 'flex', justifyContent: 'flex-start', columnGap: '10px' }}>
+          <Typography>My first steps in JS</Typography>
+          {js ? <IcoArrowDown size={10} /> : <IcoArrowRight size={10} />}
+        </Button>
+        <CollapseNode
+          open={js}
+          language="js"
+          code={JS_CODE_EXAMPLE}
+          link="https://github.com/daosongit/modapogoda/blob/main/js/cart.js"
+        />
+        <Button
+          onClick={() => setReact(!react)}
+          sx={{ display: 'flex', justifyContent: 'flex-start', columnGap: '10px' }}>
+          <Typography>My first steps in React</Typography>
+          {react ? <IcoArrowDown size={10} /> : <IcoArrowRight size={10} />}
+        </Button>
+        <CollapseNode
+          open={react}
+          language="jsx"
+          code={REACT_CODE_EXAMPLE}
+          link="https://github.com/daosongit/modapogoda.react/blob/master/src/components/ProductCart/ProductCart.jsx"
+        />
+      </Stack>
+    </>
   );
 }

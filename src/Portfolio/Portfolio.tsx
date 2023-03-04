@@ -14,7 +14,12 @@ export default function Portfolio() {
       <TopNavigation />
       <Box
         component="section"
-        sx={{ display: 'flex', justifyContent: 'space-between', mt: '20px' }}>
+        sx={{
+          display: 'flex',
+          flexDirection: { lg: 'row', xs: 'column' },
+          justifyContent: { lg: 'space-between' },
+          mt: '20px',
+        }}>
         <AboutMe />
         <GitInfo />
       </Box>

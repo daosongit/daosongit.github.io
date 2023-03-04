@@ -24,11 +24,13 @@ export default function GitInfo() {
   }, []);
   const LanguagesList = ({ languages, isCaption }: LanguagesListProps) => {
     return (
-      <List disablePadding sx={{ display: 'flex', columnGap: '20px' }}>
+      <List disablePadding sx={{ display: 'flex', columnGap: '20px', flexWrap: 'wrap' }}>
         {languages?.map((el) => (
-          <ListItem key={el.name} disablePadding sx={{ width: 'auto' }}>
+          <ListItem key={el.name} disablePadding sx={{ width: { sm: 'auto' } }}>
             <IcoCircle size={10} color={el.color} />
-            <Typography sx={{ ml: '5px' }}>{el.name}</Typography>
+            <Typography component="span" sx={{ ml: '5px' }}>
+              {el.name}
+            </Typography>
             <Typography
               component="span"
               variant={isCaption ? 'caption' : 'body2'}
@@ -55,7 +57,8 @@ export default function GitInfo() {
           flexDirection: 'column',
           rowGap: '10px',
           border: '1px solid grey',
-          width: '50%',
+          minWidth: '50%',
+          maxWidth: { lg: 'fit-content' },
           p: '10px 15px',
           borderRadius: '5px',
           mt: '10px',
@@ -86,13 +89,18 @@ export default function GitInfo() {
         component="img"
         src="https://ghchart.rshah.org/daosongit"
         alt="Github charts"
-        sx={{ border: '1px solid grey', p: '10px 15px', borderRadius: '5px' }}
+        sx={{
+          width: '100%',
+          border: '1px solid grey',
+          p: '10px 15px',
+          borderRadius: '5px',
+        }}
       />
-      <Typography sx={{ m: '20px 0 10px' }}>Languages usage for the all time</Typography>
+      <Typography sx={{ m: '20px 0 10px' }}>Languages usage for the whole time</Typography>
       <LanguagesList languages={gitData?.languagesUsage} />
       <List
         disablePadding
-        sx={{ display: 'flex', width: '100%', height: '7px', borderRadius: '100px' }}>
+        sx={{ display: 'flex', width: '100%', height: '7px', borderRadius: '100px', mt: '10px' }}>
         {gitData?.languagesUsage.map((el) => (
           <ListItem
             key={el.name}

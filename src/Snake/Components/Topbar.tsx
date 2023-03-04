@@ -18,13 +18,15 @@ export default function Topbar({ score, isGameStarted, startGame }: TopbarProps)
         alignItems: 'center',
         justifyContent: 'space-between',
       }}>
-      <Typography component="span" variant="body2">
+      <Typography component="span" variant="body1">
         {score}
       </Typography>
       <Button
         onClick={() => startGame(false)}
         sx={{ visibility: `${isGameStarted ? 'visible' : 'hidden'}`, borderRadius: '5px' }}>
-        PAUSE
+        <Typography component="span" variant="body1">
+          PAUSE
+        </Typography>
       </Button>
     </Box>
   );

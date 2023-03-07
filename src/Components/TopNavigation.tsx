@@ -5,6 +5,7 @@ import { BiArrowBack as IcoBack } from 'react-icons/bi';
 import { useNavigate } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../redux/store';
 import { removeTab } from '../redux/tabSlice';
+import { memo } from 'react';
 
 export const TOPNAV_HEIGHT = '32px';
 
@@ -25,7 +26,8 @@ const NavItem = ({ children, title, onClick, disabled = false }: NavItemProps) =
   </Tooltip>
 );
 
-export default function TopNavigation() {
+function TopNavigation() {
+  console.log('TopNavigation');
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
   const tabs = useAppSelector((state) => state);
@@ -61,3 +63,5 @@ export default function TopNavigation() {
     </Box>
   );
 }
+
+export default memo(TopNavigation);

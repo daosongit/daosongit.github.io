@@ -1,4 +1,4 @@
-export default function isSnakeСannibal(snake: number[][]) {
+export default function isSnakeCannibal(snake: number[][]) {
   if (snake.length) {
     // find arrays with same first value
     const buff = [...snake.filter((a) => a[0] === snake[snake.length - 1][0])];

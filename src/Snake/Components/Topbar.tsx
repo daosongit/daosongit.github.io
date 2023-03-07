@@ -1,6 +1,7 @@
 import { Box, Button, Typography } from '@mui/material';
 import { BOARD_SIZE } from '../modules/constants';
 import useCellSize from '../hooks/useCellSize';
+import { memo } from 'react';
 
 interface TopbarProps {
   score: number;
@@ -8,7 +9,7 @@ interface TopbarProps {
   startGame: (isStarted: boolean) => void;
 }
 
-export default function Topbar({ score, isGameStarted, startGame }: TopbarProps) {
+function Topbar({ score, isGameStarted, startGame }: TopbarProps) {
   const width = BOARD_SIZE * useCellSize();
   return (
     <Box
@@ -31,3 +32,5 @@ export default function Topbar({ score, isGameStarted, startGame }: TopbarProps)
     </Box>
   );
 }
+
+export default memo(Topbar);

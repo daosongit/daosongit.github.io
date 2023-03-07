@@ -2,14 +2,15 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
 import { persistStore, persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
-import tabReducer from './tabSlice';
+import tabs from './tabSlice';
+import bestScore from './bestScoreSlice';
 
 const persistConfig = {
   key: 'root',
   storage,
 };
 
-const rootReducer = combineReducers({ tabReducer });
+const rootReducer = combineReducers({ tabs, bestScore });
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 export const store = configureStore({

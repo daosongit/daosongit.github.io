@@ -2,6 +2,7 @@ import { Box, Button, ToggleButton, ToggleButtonGroup, Typography } from '@mui/m
 import { useState } from 'react';
 import { BOARD_SIZE, SPEED } from '../modules/constants';
 import useCellSize from '../hooks/useCellSize';
+import { useAppSelector } from '../../redux/store';
 
 interface GameMenuProps {
   score: number;
@@ -11,13 +12,13 @@ interface GameMenuProps {
 }
 
 export default function GameMenu({ score, startGame, changeSpeed, speed }: GameMenuProps) {
+  const bestScore = useAppSelector((state) => state.bestScore.bestScore);
   const [speedValue, setSpeedValue] = useState(speed);
   function handleClick(e: React.MouseEvent<HTMLElement>, speed: string) {
     setSpeedValue(Number(speed));
     changeSpeed(Number(speed));
   }
   const boxSize = BOARD_SIZE * useCellSize();
-  const bestScore = localStorage.getItem('score') || 0;
 
   return (
     <Box

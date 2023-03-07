@@ -5,6 +5,8 @@ import { MOVE_DIRECTION, SPEED } from './modules/constants';
 import { Box, ThemeProvider } from '@mui/material';
 // react
 import { useCallback, useEffect, useRef, useState } from 'react';
+import { useAppDispatch, useAppSelector } from '../redux/store';
+import { setBestScore } from '../redux/bestScoreSlice';
 //components
 import Board from './Components/Board';
 import Topbar from './Components/Topbar';
@@ -27,6 +29,8 @@ export default function Snake() {
   const [isGameStarted, setGameStarted] = useState(false);
   const [score, setScore] = useState(0);
   const [snakeSpeed, setSnakeSpeed] = useState(SPEED.Normal);
+  const dispatch = useAppDispatch();
+  const bestScore = useAppSelector((state) => state.bestScore.bestScore);
 
   const startGame = useCallback((isStarted = true) => setGameStarted(isStarted), []);
   const changeSpeed = useCallback((speed: number) => setSnakeSpeed(speed), []);
@@ -60,9 +64,8 @@ export default function Snake() {
       if (isSnakeCannibal(snake)) {
         setSnake([getRandomArr()]);
         setGameStarted(false);
-        const storage = Number(localStorage.getItem('score'));
-        if (storage && storage < score) {
-          localStorage.setItem('score', score.toString());
+        if (bestScore < score) {
+          dispatch(setBestScore(score));
         }
         setScore(0);
         return;

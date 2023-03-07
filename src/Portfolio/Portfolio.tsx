@@ -1,6 +1,6 @@
 import { Box, Container, Divider } from '@mui/material';
 import AboutMe from './Intro/AboutMe';
-import GitInfo from './Intro/GitInfo';
+import GitInfo from './Intro/GitInfo/GitInfo';
 import Stack from './TechStack/TechStack';
 import { TASKBAR_HEIGHT } from '../Root/TaskBar/TaskBar';
 import FirstSteps from './FirstSteps/FirstSteps';

@@ -2,7 +2,7 @@
 import { TASKBAR_HEIGHT } from '../Root/TaskBar/TaskBar';
 import { MOVE_DIRECTION, SPEED } from './modules/constants';
 //mui
-import { Box, ThemeProvider, useMediaQuery } from '@mui/material';
+import { Box, ThemeProvider } from '@mui/material';
 // react
 import { useCallback, useEffect, useRef, useState } from 'react';
 //components
@@ -10,6 +10,7 @@ import Board from './Components/Board';
 import Topbar from './Components/Topbar';
 import GameMenu from './Components/GameMenu';
 import TopNavigation, { TOPNAV_HEIGHT } from '../Components/TopNavigation';
+import MobileController from './Components/MobileController';
 //modules
 import theme from './styles/theme';
 import checkBorderLine from './modules/checkBorderLine';
@@ -17,7 +18,6 @@ import getRandomArr from './modules/getRandomArr';
 import getMoveDirection from './modules/getMoveDirection';
 import isSnakeCannibal from './modules/isSnakeCannibal';
 import useKeyDownHandler from './hooks/useKeyDownHandler';
-import MobileController from './Components/MobileController';
 
 export default function Snake() {
   const [snake, setSnake] = useState([getRandomArr()]);

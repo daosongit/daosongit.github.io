@@ -6,7 +6,6 @@ import {
   SiGit as IcoGit,
   SiMaterialui as IcoMUI,
   SiRedux as IcoRedux,
-  SiSass as IcoSass,
   SiHtml5 as IcoHTML,
   SiCss3 as IcoCss,
 } from 'react-icons/si';

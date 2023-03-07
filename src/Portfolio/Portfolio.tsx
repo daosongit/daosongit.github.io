@@ -1,4 +1,4 @@
-import { Box, Container, Divider, Typography } from '@mui/material';
+import { Box, Container, Divider } from '@mui/material';
 import AboutMe from './Intro/AboutMe';
 import GitInfo from './Intro/GitInfo';
 import Stack from './TechStack/TechStack';

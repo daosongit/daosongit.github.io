@@ -18,7 +18,6 @@ const ButtonSx = styled(Button)({
 });
 
 function MobileController({ changeDirection }: MobileControllerProps) {
-  console.log('MobileController');
   return (
     <Box
       sx={{

@@ -1,3 +1,5 @@
+//styles
+import snakeTheme from './theme/snakeTheme';
 // constants
 import { TASKBAR_HEIGHT } from '../Root/TaskBar/TaskBar';
 import { MOVE_DIRECTION, SPEED } from './modules/constants';
@@ -14,7 +16,6 @@ import GameMenu from './Components/GameMenu';
 import TopNavigation, { TOPNAV_HEIGHT } from '../Components/TopNavigation';
 import MobileController from './Components/MobileController';
 //modules
-import theme from './styles/theme';
 import checkBorderLine from './modules/checkBorderLine';
 import getRandomArr from './modules/getRandomArr';
 import getMoveDirection from './modules/getMoveDirection';
@@ -84,7 +85,7 @@ export default function Snake() {
   }
 
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={snakeTheme}>
       <TopNavigation />
       <Box
         sx={{

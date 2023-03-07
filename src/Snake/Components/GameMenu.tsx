@@ -44,7 +44,7 @@ export default function GameMenu({ score, startGame, changeSpeed, speed }: GameM
           Best score: {bestScore}
         </Typography>
         <Button onClick={startGame} sx={{ my: '20px' }}>
-          <Typography component="span" variant="caption">
+          <Typography component="span" variant="caption" color="secondary">
             {score ? 'Resume' : 'New Game'}
           </Typography>
         </Button>
@@ -52,7 +52,7 @@ export default function GameMenu({ score, startGame, changeSpeed, speed }: GameM
           Speed
         </Typography>
         <ToggleButtonGroup
-          color="primary"
+          color="secondary"
           value={speedValue}
           exclusive
           onChange={handleClick}

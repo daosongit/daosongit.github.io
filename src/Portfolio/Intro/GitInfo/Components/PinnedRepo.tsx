@@ -9,7 +9,10 @@ export default function PinnedRepo({ pinned }: { pinned: IPinned }) {
     <>
       <Box sx={{ display: 'flex', columnGap: '10px', alignItems: 'center' }}>
         <IcoPinned />
-        <Link href={url} target="_blank">
+        <Link
+          href={url}
+          target="_blank"
+          sx={{ color: 'secondary.main', '&:hover': { color: 'secondary.dark' } }}>
           {name}
         </Link>
         <Box

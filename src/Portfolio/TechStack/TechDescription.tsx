@@ -8,7 +8,7 @@ type ListItmProps = {
 
 const ListItm = ({ children, title }: ListItmProps) => {
   return (
-    <ListItem disablePadding>
+    <ListItem>
       <p>
         <i>
           <u>{title}</u>:{' '}
@@ -21,7 +21,7 @@ const ListItm = ({ children, title }: ListItmProps) => {
 
 export function JsStack() {
   return (
-    <List disablePadding>
+    <List>
       <ListItm title="Object-oriented programming">
         understand object-oriented programming concepts. Able to implement them in JavaScript using
         classes and prototypes.
@@ -43,7 +43,7 @@ export function JsStack() {
 
 export function ReactStack() {
   return (
-    <List disablePadding>
+    <List>
       <ListItm title="React concepts">
         understand the core concepts of React such as components, state, props, JSX, and the
         component lifecycle. Understand how to use React to build reusable UI components.
@@ -62,7 +62,7 @@ export function ReactStack() {
 
 export function TypescriptStack() {
   return (
-    <List disablePadding>
+    <List>
       <ListItm title="Typescript features">
         interfaces, types, generics, type inference, namespaces, enumerations
       </ListItm>
@@ -73,7 +73,7 @@ export function TypescriptStack() {
 
 export function ReduxtStack() {
   return (
-    <List disablePadding>
+    <List>
       <ListItm title="Redux concepts">
         understanding actions, reducers, middlewares, stores and how they work together to manage
         application state
@@ -87,7 +87,7 @@ export function ReduxtStack() {
 
 export function MUIStack() {
   return (
-    <List disablePadding>
+    <List>
       <ListItm title="MUI concepts">
         trying to use the all MUI components with maximum accessibility. Don't put redundant divs
         where it isn't need.
@@ -101,7 +101,7 @@ export function MUIStack() {
 
 export function HtmlCssStack() {
   return (
-    <List disablePadding>
+    <List>
       <ListItm title="HTML">
         periodically read html tags and trying to use most appropriate tags. Trying to follow
         accessibility semantic. Can write simple SVG.
@@ -117,7 +117,7 @@ export function HtmlCssStack() {
 
 export function GitStack() {
   return (
-    <List disablePadding>
+    <List>
       <ListItm title="Basic Git commands">
         git init, git add, git commit, git status, git push, and git pull.
       </ListItm>

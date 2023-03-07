@@ -7,7 +7,6 @@ function Sidebar({ onClick }: { onClick: () => void }) {
   console.log('Sidebar');
   return (
     <List
-      disablePadding
       sx={{
         pb: '5px',
         display: 'flex',

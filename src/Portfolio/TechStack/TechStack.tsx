@@ -41,6 +41,8 @@ export default function Stack() {
             value={tabIdx}
             onChange={handleChange}
             orientation="vertical"
+            textColor="secondary"
+            indicatorColor="secondary"
             sx={{ display: 'flex' }}>
             {stackList.map((el) => (
               <Tab
@@ -51,7 +53,6 @@ export default function Stack() {
                 sx={{
                   display: 'flex',
                   justifyContent: 'flex-start',
-                  textTransform: 'none',
                   py: 0,
                   minHeight: '60px',
                 }}

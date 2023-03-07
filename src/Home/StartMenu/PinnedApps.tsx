@@ -11,8 +11,7 @@ function PinnedApps() {
   ];
   return (
     <List
-      disablePadding
-      sx={{ display: 'flex', columnGap: '5px', p: '20px', justifyContent: 'space-around' }}>
+      sx={{ display: 'flex', columnGap: '5px', p: '20px', justifyContent: 'flex-end', m: '10px' }}>
       {pinnedAppsList.map((el) => (
         <AppButtonLink
           key={el.title}

@@ -46,14 +46,9 @@ export default function GitInfo() {
       <Typography sx={{ m: '20px 0 10px' }}>Languages usage for the whole time</Typography>
       <LanguagesList languages={gitData?.languagesUsage} />
       <List
-        disablePadding
         sx={{ display: 'flex', width: '100%', height: '7px', borderRadius: '100px', mt: '10px' }}>
         {gitData?.languagesUsage.map((el) => (
-          <ListItem
-            key={el.name}
-            disablePadding
-            sx={{ width: `${el.usage}%`, bgcolor: el.color }}
-          />
+          <ListItem key={el.name} sx={{ width: `${el.usage}%`, bgcolor: el.color }} />
         ))}
       </List>
     </div>

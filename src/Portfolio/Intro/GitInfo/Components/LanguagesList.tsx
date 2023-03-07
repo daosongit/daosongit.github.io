@@ -9,9 +9,9 @@ interface LanguagesListProps {
 
 export default function LanguagesList({ languages, isCaption }: LanguagesListProps) {
   return (
-    <List disablePadding sx={{ display: 'flex', columnGap: '20px', flexWrap: 'wrap' }}>
+    <List sx={{ display: 'flex', columnGap: '20px', flexWrap: 'wrap' }}>
       {languages?.map((el) => (
-        <ListItem key={el.name} disablePadding sx={{ width: { sm: 'auto' } }}>
+        <ListItem key={el.name} sx={{ width: { sm: 'auto' } }}>
           <IcoCircle size={10} color={el.color} />
           <Typography component="span" sx={{ ml: '5px' }}>
             {el.name}

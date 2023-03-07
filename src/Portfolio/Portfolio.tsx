@@ -8,9 +8,7 @@ import TopNavigation from '../Components/TopNavigation';
 
 export default function Portfolio() {
   return (
-    <Container
-      maxWidth="lg"
-      sx={{ py: '20px', color: '#e2e0e0', minHeight: `calc(100vh - ${TASKBAR_HEIGHT})` }}>
+    <Container maxWidth="lg" sx={{ py: '20px', minHeight: `calc(100vh - ${TASKBAR_HEIGHT})` }}>
       <TopNavigation />
       <Box
         component="section"

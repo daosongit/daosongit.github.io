@@ -2,7 +2,6 @@ import { Button, styled } from '@mui/material';
 
 const StartButton = styled(Button)({
   display: 'flex',
-  textTransform: 'none',
   color: '#abacad',
   border: '1px solid transparent',
   '&:hover': {

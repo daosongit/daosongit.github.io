@@ -11,7 +11,7 @@ import ManagedTooltip from '../../Home/UI/ManagedTooltip';
 export const TASKBAR_HEIGHT = '45px';
 
 export default function Taskbar() {
-  const tabs = useAppSelector((state) => state.tabReducer);
+  const tabs = useAppSelector((state) => state.tabs);
 
   // StartMenu logic
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);

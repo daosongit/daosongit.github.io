@@ -5,7 +5,6 @@ import PowerPopup from './PowerDetails';
 import Sidebar from './Sidebar';
 
 function StartMenu() {
-  console.log('StartMenu');
   const [powerPopup, setPowerPopup] = useState<boolean>(false);
   const handleOpen = () => {
     setPowerPopup(!powerPopup);

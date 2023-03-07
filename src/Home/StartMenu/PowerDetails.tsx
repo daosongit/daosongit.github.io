@@ -4,7 +4,6 @@ import { BsPower as IcoPower, BsMoon as IcoSleep } from 'react-icons/bs';
 import { RxReload as IcoReload } from 'react-icons/rx';
 
 function PowerPopup({ power }: { power: boolean }) {
-  console.log('PowerPopup');
   return (
     <Fade in={power} timeout={500}>
       <Stack

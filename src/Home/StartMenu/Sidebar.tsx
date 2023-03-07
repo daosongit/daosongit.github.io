@@ -4,7 +4,6 @@ import { CiSettings as IcoSetting } from 'react-icons/ci';
 import { BsPower as IcoPower } from 'react-icons/bs';
 
 function Sidebar({ onClick }: { onClick: () => void }) {
-  console.log('Sidebar');
   return (
     <List
       sx={{

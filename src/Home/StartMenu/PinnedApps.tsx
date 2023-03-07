@@ -4,7 +4,6 @@ import AppButtonLink from '../UI/AppButton';
 import { ChromeSVG, SnakeSVG } from '../Applications/AppIcons';
 
 function PinnedApps() {
-  console.log('PinnedApps');
   const pinnedAppsList = [
     { title: 'Portfolio', icon: <ChromeSVG />, link: '/portfolio' },
     { title: 'Snake', icon: <SnakeSVG />, link: '/snake' },

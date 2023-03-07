@@ -3,7 +3,6 @@ import AboutMe from './Intro/AboutMe';
 import GitInfo from './Intro/GitInfo/GitInfo';
 import Stack from './TechStack/TechStack';
 import { TASKBAR_HEIGHT } from '../Root/TaskBar/TaskBar';
-import FirstSteps from './FirstSteps/FirstSteps';
 import TopNavigation from '../Components/TopNavigation';
 
 export default function Portfolio() {
@@ -23,8 +22,6 @@ export default function Portfolio() {
       </Box>
       <Divider sx={{ my: '30px' }} />
       <Stack />
-      <Divider sx={{ my: '30px' }} />
-      <FirstSteps />
     </Container>
   );
 }

@@ -1,5 +1,7 @@
+import { useMediaQuery } from '@mui/material';
 import { useEffect } from 'react';
 import { MOVE_DIRECTION } from '../modules/constants';
+import theme from '../styles/theme';
 
 interface KeyDownHandlerProps {
   direction: string;
@@ -7,7 +9,10 @@ interface KeyDownHandlerProps {
 }
 
 export default function useKeyDownHandler({ direction, changeDirection }: KeyDownHandlerProps) {
+  const MD_DISPLAY = useMediaQuery(theme.breakpoints.up('md'));
   useEffect(() => {
+    if (!MD_DISPLAY) return;
+    console.log('asd');
     const keyDownHandler = (e: KeyboardEvent) => {
       if (Object.values(MOVE_DIRECTION).includes(e.key)) {
         changeDirection(e.key);
@@ -15,5 +20,5 @@ export default function useKeyDownHandler({ direction, changeDirection }: KeyDow
     };
     document.addEventListener('keydown', keyDownHandler);
     return () => document.removeEventListener('keydown', keyDownHandler);
-  }, [direction]);
+  }, [direction, MD_DISPLAY]);
 }

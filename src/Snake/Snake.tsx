@@ -2,9 +2,9 @@
 import { TASKBAR_HEIGHT } from '../Root/TaskBar/TaskBar';
 import { MOVE_DIRECTION, SPEED } from './modules/constants';
 //mui
-import { Box, ThemeProvider } from '@mui/material';
+import { Box, ThemeProvider, useMediaQuery } from '@mui/material';
 // react
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 //components
 import Board from './Components/Board';
 import Topbar from './Components/Topbar';
@@ -17,6 +17,7 @@ import getRandomArr from './modules/getRandomArr';
 import getMoveDirection from './modules/getMoveDirection';
 import isSnakeCannibal from './modules/isSnakeCannibal';
 import useKeyDownHandler from './hooks/useKeyDownHandler';
+import MobileController from './Components/MobileController';
 
 export default function Snake() {
   const [snake, setSnake] = useState([getRandomArr()]);
@@ -27,15 +28,9 @@ export default function Snake() {
   const [score, setScore] = useState(0);
   const [snakeSpeed, setSnakeSpeed] = useState(SPEED.Normal);
 
-  function startGame(isStarted = true) {
-    setGameStarted(isStarted);
-  }
-  function changeSpeed(speed: number) {
-    setSnakeSpeed(speed);
-  }
-  function changeDirection(direction: string) {
-    setDirection(direction);
-  }
+  const startGame = useCallback((isStarted = true) => setGameStarted(isStarted), []);
+  const changeSpeed = useCallback((speed: number) => setSnakeSpeed(speed), []);
+  const changeDirection = useCallback((direction: string) => setDirection(direction), []);
 
   useKeyDownHandler({ direction, changeDirection });
 
@@ -117,6 +112,7 @@ export default function Snake() {
             />
           )}
         </Box>
+        <MobileController changeDirection={changeDirection} />
       </Box>
     </ThemeProvider>
   );

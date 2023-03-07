@@ -27,7 +27,6 @@ const NavItem = ({ children, title, onClick, disabled = false }: NavItemProps) =
 );
 
 function TopNavigation() {
-  console.log('TopNavigation');
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
   const tabs = useAppSelector((state) => state);

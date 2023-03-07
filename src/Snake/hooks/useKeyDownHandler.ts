@@ -12,7 +12,6 @@ export default function useKeyDownHandler({ direction, changeDirection }: KeyDow
   const MD_DISPLAY = useMediaQuery(theme.breakpoints.up('md'));
   useEffect(() => {
     if (!MD_DISPLAY) return;
-    console.log('asd');
     const keyDownHandler = (e: KeyboardEvent) => {
       if (Object.values(MOVE_DIRECTION).includes(e.key)) {
         changeDirection(e.key);
@@ -20,5 +19,5 @@ export default function useKeyDownHandler({ direction, changeDirection }: KeyDow
     };
     document.addEventListener('keydown', keyDownHandler);
     return () => document.removeEventListener('keydown', keyDownHandler);
-  }, [direction, MD_DISPLAY]);
+  }, [direction, MD_DISPLAY, changeDirection]);
 }

@@ -28,7 +28,7 @@ export default function Home() {
             xl: 'url(images/w-2k.jpg)',
           },
           backgroundSize: 'cover',
-          backgroundPosition: 'right',
+          backgroundPosition: { xs: 'center', sm: 'right' },
           color: 'white',
           p: '20px',
           position: 'relative',

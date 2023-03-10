@@ -44,7 +44,7 @@ export default function Home() {
             rowGap: '10px',
           }}>
           {Object.entries(appList).map(([key, value]) => (
-            <AppButtonLink title={key} link={value.link}>
+            <AppButtonLink key={key} title={key} link={value.link}>
               {value.icon}
             </AppButtonLink>
           ))}

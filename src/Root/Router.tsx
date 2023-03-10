@@ -1,13 +1,11 @@
 import { lazy } from 'react';
 import { createHashRouter } from 'react-router-dom';
-// import Home from '../Home/Home';
-// import Portfolio from '../Portfolio/Portfolio';
-// import Snake from '../Snake/Snake';
 import Root from './Root';
 
 const Home = lazy(() => import('../Home/Home'));
 const Portfolio = lazy(() => import('../Portfolio/Portfolio'));
 const Snake = lazy(() => import('../Snake/Snake'));
+const CurrencyConverter = lazy(() => import('../CurrencyConverter/Converter'));
 
 const router = createHashRouter([
   {
@@ -25,6 +23,10 @@ const router = createHashRouter([
       {
         path: '/snake',
         element: <Snake />,
+      },
+      {
+        path: '/converter',
+        element: <CurrencyConverter />,
       },
     ],
   },

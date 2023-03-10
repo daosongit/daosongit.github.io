@@ -4,6 +4,7 @@ import { TASKBAR_HEIGHT } from '../Root/TaskBar/TaskBar';
 import Trash from './RecycleBin/RecycleBin';
 import { useState } from 'react';
 import AppButtonLink, { AppButton } from './UI/AppButton';
+import appList from './Applications/AppList';
 
 export default function Home() {
   const [isRecycleBin, setRecycleBin] = useState(false);
@@ -42,12 +43,11 @@ export default function Home() {
             width: 'fit-content',
             rowGap: '10px',
           }}>
-          <AppButtonLink title="Portfolio" link="portfolio">
-            <ChromeSVG />
-          </AppButtonLink>
-          <AppButtonLink title="Snake" link="snake">
-            <SnakeSVG />
-          </AppButtonLink>
+          {Object.entries(appList).map(([key, value]) => (
+            <AppButtonLink title={key} link={value.link}>
+              {value.icon}
+            </AppButtonLink>
+          ))}
           <AppButton
             sx={{ position: 'absolute', right: '20px', bottom: '20px' }}
             onClick={() => setRecycleBin(!isRecycleBin)}>

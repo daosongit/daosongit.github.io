@@ -1,28 +1,32 @@
 import { List } from '@mui/material';
 import { memo } from 'react';
 import AppButtonLink from '../UI/AppButton';
-import { ChromeSVG, SnakeSVG } from '../Applications/AppIcons';
+import appList from '../Applications/AppList';
 
 function PinnedApps() {
-  const pinnedAppsList = [
-    { title: 'Portfolio', icon: <ChromeSVG />, link: '/portfolio' },
-    { title: 'Snake', icon: <SnakeSVG />, link: '/snake' },
-  ];
   return (
     <List
-      sx={{ display: 'flex', columnGap: '5px', p: '20px', justifyContent: 'flex-end', m: '10px' }}>
-      {pinnedAppsList.map((el) => (
+      sx={{
+        display: 'flex',
+        columnGap: '5px',
+        rowGap: '5px',
+        p: '20px',
+        justifyContent: 'flex-start',
+        m: '10px',
+        flexWrap: 'wrap',
+      }}>
+      {Object.entries(appList).map(([key, value]) => (
         <AppButtonLink
-          key={el.title}
-          title={el.title}
-          link={el.link}
+          key={key}
+          title={key}
+          link={value.link}
           sx={{
             backgroundColor: '#6e6e6e',
             '&:hover': {
               backgroundColor: '#585757',
             },
           }}>
-          {el.icon}
+          {value.icon}
         </AppButtonLink>
       ))}
     </List>

@@ -1,5 +1,5 @@
 import { Box, Typography } from '@mui/material';
-import { ChromeSVG, SnakeSVG, TrashSVG } from './Applications/AppIcons';
+import { TrashSVG } from './Applications/AppIcons';
 import { TASKBAR_HEIGHT } from '../Root/TaskBar/TaskBar';
 import Trash from './RecycleBin/RecycleBin';
 import { useState } from 'react';

@@ -6,7 +6,6 @@ import { addTab } from '../../redux/tabSlice';
 export const AppButton = styled(Button)({
   width: '90px',
   display: 'block',
-  // color: '#e2e0e0',
 });
 
 interface AppButtonLinkProps {

@@ -1,5 +1,6 @@
 import { lazy } from 'react';
 import { createHashRouter } from 'react-router-dom';
+import ErrorBoundary from '../ErrorBoundary/ErrorBoundary';
 import Root from './Root';
 
 const Home = lazy(() => import('../Home/Home'));
@@ -11,6 +12,7 @@ const router = createHashRouter([
   {
     path: '/',
     element: <Root />,
+    errorElement: <ErrorBoundary />,
     children: [
       {
         path: '/',

@@ -11,7 +11,7 @@ export const HEADERS = {
 
 export const QUERY = {
   'query': `query {
-        user(login: "daosongit") 
+        user(login: "ivan-kulai") 
         {
           repositories(first: 10)
           {

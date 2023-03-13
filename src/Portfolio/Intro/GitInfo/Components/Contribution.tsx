@@ -9,7 +9,7 @@ export default function Contribution({ contribution }: { contribution: number | 
       </Box>
       <Box
         component="img"
-        src="https://ghchart.rshah.org/daosongit"
+        src="https://ghchart.rshah.org/ivan-kulai"
         alt="Github charts"
         sx={{
           width: '100%',
